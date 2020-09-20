@@ -4,12 +4,12 @@
 #include "assert.h"
 #include "compress40.h"
 #include <math.h>
-#include "pnm.h"
-#include "a2methods.h"
+#include <pnm.h>
+#include <a2methods.h>
 #include "a2plain.h"
 #include "a2blocked.h"
 
-float square(float a){
+float square(int a){
     return a *a;
 }
 
@@ -23,8 +23,8 @@ float min(float a , float b){
 }
 
 int main(int argc, char *argv[]){
-    
-    A2Methods_T methods = uarray2_methods_plain; 
+
+    A2Methods_T methods = uarray2_methods_plain;
     assert(methods);
 
 
@@ -40,8 +40,7 @@ int main(int argc, char *argv[]){
     for (int i = 1; i < argc; i++){
         char *ppmfile;
 
-       
-        if(argv[i] == "-" && check_dash == 0){
+        if(argv[i][0] == '-' && check_dash == 0){
             file = stdin;
             temp = Pnm_ppmread(file, methods);
             check_dash = 1;
@@ -50,7 +49,7 @@ int main(int argc, char *argv[]){
             ppmfile = argv[i];
             file = fopen(ppmfile, "r");
             temp = Pnm_ppmread(file, methods);
-        }   
+        }
 
         if (i == 1 ){
             img1 = temp;
@@ -66,30 +65,35 @@ int main(int argc, char *argv[]){
 
     if (abs(height1- height2) > 1 || abs(width1- width2) >1 ){
         fprintf(stderr, "height or width differs by more than 1 pixel\n");
-        printf("Height difference: %d, Width difference: %d", abs(height1- height2), abs(width1- width2));
+        printf("Height difference: %d, Width difference: %d\n", abs(height1- height2), abs(width1- width2));
         exit(1);
     }
 
-    float nominator = 0;
-
+    double nominator = 0;
+    unsigned denom = img2->denominator;
     for (int i = 0; i < min(width1, width2); i++) {
         for (int j = 0; j < min(height1, height2); j++) {
             Pnm_rgb rgb1 = img1->methods->at(img1->pixels, i, j);
             Pnm_rgb rgb2 = img2->methods->at(img2->pixels, i, j);
-            int red1 = rgb1->red;
-            int red2 = rgb2->red;
-            int green1 = rgb1->green;
-            int green2 = rgb2->green;
-            int blue1 = rgb1->blue;
-            int blue2 = rgb2->blue;
+            double red1  = (rgb1->red)   / denom,
+                  red2   = (rgb2->red)   / denom,
+                  green1 = (rgb1->green) / denom,
+                  green2 = (rgb2->green) / denom,
+                  blue1  = (rgb1->blue)  / denom,
+                  blue2  = (rgb2->blue)  / denom;
+
+
 
             nominator += square(red1 - red2) + square(green1 - green2) + square(blue1- blue2);
         }
     }
 
-    float denominator = 3*min(width1, width2)*min(height1, height2);
-    
-    float root_mean_sq_diff = sqrt(nominator/denominator);
+    double denominator = 3*min(width1, width2)*min(height1, height2);
+    double root_mean_sq_diff = sqrt(nominator/denominator);
 
     printf("Root mean square difference: %0.4f\n", root_mean_sq_diff);
+
+   Pnm_ppmfree(&img1);
+   Pnm_ppmfree(&img2);
+   fclose(file);
 }

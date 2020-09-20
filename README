@@ -1,0 +1,37 @@
+**********************************************************
+* HW4: Arith
+* Comp 40 Spring 2020
+* README
+* Author: Erce Ozmetin(eozmet01), Dogacan Colak (dcolak01)
+* 
+*********************************************************
+
+40image.c   is the main() in which the program is ran.
+
+compress40  has the functions for compressing and decompressing, which are
+            called by 40image
+
+convert     has functions to convert from rgb space to video space and vice
+            versa.
+
+dct         has functions that transfrom y, pb, pr to dct float values and vice
+            versa.
+
+quant       has functions that quantize dct float values into indices and vice
+            versa.
+
+wordpack    has functions that pack quantized dct values into 32-bit codewords
+            and vice versa.
+
+bitpack     has functions that are used by wordpack in order to directly
+            manipulate the bits in a word.
+
+Acknowledgements: Lucas Campbell (OG), Ben London, Adam Lipson, Michael Kotlik,
+                  Richard Townsend, Danielle Lan, Jessica Wang,
+                  Alexander Zsikla, Allison Reagan, Ryan Polhemus
+
+Everything is correctly implemented to the best of our knowledge.
+
+3 hours spent understanding problems.
+
+35 hours spent solving the problems.

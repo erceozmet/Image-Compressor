@@ -3,7 +3,7 @@
 
 #define A2 A2Methods_UArray2
 
-typedef void *A2;                /* unknown type that represents a 
+typedef void *A2;               /* unknown type that represents a 
                                  * 2D array of 'cells'
                                  */
 
