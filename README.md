@@ -1,4 +1,6 @@
-
+![Before](/demo/animals.jpg)
+![After](/demo/animals\ 2.jpg)
+Before and after compression & decompression.
 
 # Arith
 A lossy image compression algorithm that utilizes bit packing.
