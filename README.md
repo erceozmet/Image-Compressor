@@ -1,8 +1,3 @@
-![Before](/demo/animals.jpg)
-![After](/demo/animals_2.jpg)
-<br/>
-Before and after compression & decompression.
-
 # Arith
 A lossy image compression algorithm that utilizes bit packing.
 
@@ -37,3 +32,8 @@ versa.
 It is a very lengthy algorithm, we recommend to check the [project spec](https://www.cs.tufts.edu/comp/40-2011f/homework/arith.html).
 
 Our implementation is able to preserve the image 94%.
+
+![Before](/demo/animals.jpg)
+![After](/demo/animals_2.jpg)
+<br/>
+Before and after compression & decompression.
