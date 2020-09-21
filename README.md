@@ -5,15 +5,17 @@ A lossy image compression algorithm that utilizes bitpacking.
 * Unfortunately, it is not possible to run the project on your machine, since the required libraries are hosted in Tufts servers.
 
 ## Usage
-  * Download the repository contents in local storage.
-  * Include the images you wish to compress in the folder.
-  * Run the executable with appropriate png or pnm image using:
+* To compress an image, run the executable with appropriate png or pnm image using:
   ```
-  ./40image >> *image_name.png*
+  40image -c [filename]
   ```
-
-## Analysis of Algorithm and Runtime
-  
+* To decompress a compressed image, run the executable
+  ```
+  40image -d [filename]
+  ```
+ 
+## Algorithm
+It is a very algorithm, I recommend to check the [project spec](https://www.cs.tufts.edu/comp/40-2011f/homework/arith.html).
 
 ## Contributing
 
