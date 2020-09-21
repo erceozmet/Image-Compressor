@@ -1,12 +1,8 @@
 # Arith
-A lossy image compression algorithm that utilizes bitpacking
-
+A lossy image compression algorithm that utilizes bitpacking.
 
 ## Installation
-* Just download the repository and compile using
-'''
- make 40image 
-'''
+* Unfortunately, it is not possible to run the project on your machine, since the required libraries are hosted in Tufts servers.
 
 ## Usage
   * Download the repository contents in local storage.
