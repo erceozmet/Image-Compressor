@@ -1,5 +1,6 @@
 ![Before](/demo/animals.jpg)
-![After](/demo/animals 2.jpg)
+![After](/demo/animals_2.jpg)
+<br/>
 Before and after compression & decompression.
 
 # Arith
