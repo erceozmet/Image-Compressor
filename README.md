@@ -1,3 +1,5 @@
+
+
 # Arith
 A lossy image compression algorithm that utilizes bit packing.
 
