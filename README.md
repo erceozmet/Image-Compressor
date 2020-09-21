@@ -8,9 +8,9 @@ A lossy image compression algorithm that utilizes bitpacking.
   * Download the repository contents in local storage.
   * Include the images you wish to compress in the folder.
   * Run the executable with appropriate png or pnm image using:
-  '''
+  ```
   ./40image >> *image_name.png*
-  '''
+  ```
 
 ## Analysis of Algorithm and Runtime
   
