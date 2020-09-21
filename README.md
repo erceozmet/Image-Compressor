@@ -32,3 +32,5 @@ versa.
             
 ### Algorithm
 It is a very lengthy algorithm, we recommend to check the [project spec](https://www.cs.tufts.edu/comp/40-2011f/homework/arith.html).
+
+Our implementation is able to preserve the image 94%.
