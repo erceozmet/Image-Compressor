@@ -27,5 +27,8 @@ versa.
 * __bitpack__     has functions that are used by wordpack in order to directly
             manipulate the bits in a word.
             
+* __ppmdiff__ is used for checking the percent difference between the original image and 
+            an image that went through compression & decompression.
+            
 ### Algorithm
 It is a very lengthy algorithm, we recommend to check the [project spec](https://www.cs.tufts.edu/comp/40-2011f/homework/arith.html).
