@@ -1,5 +1,5 @@
-# Arith
-A lossy image compression algorithm that utilizes bit packing.
+# Image-Compressor
+A image compression algorithm that utilizes bit packing.
 
 ### Installation
 * Unfortunately, it is not possible to run the project on your machine, since the required libraries are hosted in Tufts servers.
